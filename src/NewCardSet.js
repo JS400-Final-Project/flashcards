@@ -21,6 +21,7 @@ export default class NewCardSet extends React.Component {
       entryId: null,
       alert: null,
       descAlert: null,
+      cardSetId: null,
       category: "",
     };
   }
@@ -117,6 +118,9 @@ export default class NewCardSet extends React.Component {
         console.log(response);
         console.log(body);
         const cardSetId = response.data._id;
+        this.setState({
+          cardSetId: cardSetId,
+        });
         const emptyCard = {
           sideA: "This is side A",
           sideB: "This is side B",
@@ -153,12 +157,13 @@ export default class NewCardSet extends React.Component {
     //    });
 
     this.props.history.push({
-      pathname: `/set/yours/${this.state.entryId}/edit`,
+      pathname: `/set/yours/${this.state.cardSetId}/edit`,
       state: {
         title: this.state.title,
         description: this.state.descriptionVal,
         category: this.state.category,
         entryId: this.state.entryId,
+        cardSetId: this.setState.cardSetId,
       },
     });
   }

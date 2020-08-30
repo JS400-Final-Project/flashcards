@@ -116,6 +116,13 @@ export default class NewCardSet extends React.Component {
       .then(function (response) {
         console.log(response);
         console.log(body);
+        const cardSetId = response.data._id;
+        const emptyCard = {
+          sideA: "This is side A",
+          sideB: "This is side B",
+          setId: cardSetId,
+        };
+        axios.post("http://localhost:5000/cards/" + cardSetId, emptyCard);
       })
       .catch(function (error) {
         if (error.response) {

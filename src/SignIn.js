@@ -19,7 +19,7 @@ import { Alert } from "@material-ui/lab";
 
 const LoginService = (data) =>
   axios
-    .post(`http://${process.env.REACT_APP_BASEURI}/login`, data)
+    .post(`${process.env.REACT_APP_BASEURI}/login`, data)
     .then((res) => res.status)
 
 // Configure FirebaseUI.

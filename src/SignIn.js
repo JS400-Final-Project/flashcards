@@ -19,7 +19,7 @@ import { Alert } from "@material-ui/lab";
 
 const LoginService = (data) =>
   axios
-    .post("http://localhost:5000/login", data)
+    .post(`http://${process.env.REACT_APP_BASEURI}/login`, data)
     .then((res) => res.status)
 
 // Configure FirebaseUI.
@@ -136,7 +136,7 @@ class SignIn extends React.Component {
                   />
                 </h5>
                 <br />
-                {this.state.error ? (
+                {this.state.loginSuccess ? (
                   <Alert severity="error">
                     {" "}
                     Unable to log in. Please check your username and password.{" "}

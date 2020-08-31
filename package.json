@@ -37,7 +37,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "react-scripts build",
+    "buildproduction": "REACT_APP_BASEURI=flashcards-js.herokuapp.com react-scripts build",
     "test": "react-scripts build && node index.js"
   },
   "eslintConfig": {

@@ -103,9 +103,19 @@ export default class NewCardSet extends React.Component {
       userId: "5f4bdd9f4ae4db08d4b77c04", // Change this
     };
 
+
+    const userData = localStorage.getItem('userData')
+    const user = JSON.parse(userData)
+    console.log(user.userWithoutPassword._id)
+    console.log(user.userWithoutPassword.roles)
+    console.log(user.token)
+
+     
     // Need help with this part
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJ1c2VyIl0sIl9pZCI6IjVmNGJkZDlmNGFlNGRiMDhkNGI3N2MwNCIsImlhdCI6MTU5ODgzMzkxMSwiZXhwIjoxNTk4ODY5OTExfQ.-fuW85bH4_4CVoBAqo9XH_6-148CMMU2j1WZsni68yY";
+    // const token =
+      // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJ1c2VyIl0sIl9pZCI6IjVmNGJkZDlmNGFlNGRiMDhkNGI3N2MwNCIsImlhdCI6MTU5ODgzMzkxMSwiZXhwIjoxNTk4ODY5OTExfQ.-fuW85bH4_4CVoBAqo9XH_6-148CMMU2j1WZsni68yY";
+    const token = user.token
+    
     const headers = {
       headers: {
         Authorization: "Bearer " + token, //the token is a variable which holds the token

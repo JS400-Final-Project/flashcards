@@ -160,7 +160,7 @@ router.delete(
     const set = await setDAO.getById(cardsetId);
 
     if (!set) {
-      res.status(404).send("set not found");
+      res.sendStatus(404);
     } else if (
       set.userId === res.locals.user._id ||
       res.locals.user.roles.includes("admin")

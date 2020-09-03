@@ -60,15 +60,6 @@ module.exports.adminCreate = async (email) => {
     throw e;
   }
 };
-// module.exports.changePassword = async (email, password) => {
-//   try {
-//     const hashed = await bcrypt.hash(password, salt);
-//     const updatedUser = User.updateOne({ email: email }, { password: hashed });
-//     return updatedUser;
-//   } catch (e) {
-//     throw e;
-//   }
-// };
 
 module.exports.changePassword = async (email, password) => {
   try {

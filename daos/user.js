@@ -74,7 +74,7 @@ module.exports.changePassword = async (email, password) => {
   try {
     const hashed = await bcrypt.hash(password, salt);
     const updatedUser = User.updateOne({ email: email }, { password: hashed });
-    return 200;
+    return updatedUser;
   } catch (e) {
     throw e;
   }

@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 require('dotenv').config()
 const { JWTSECRET } = process.env;
 const secret = JWTSECRET;
+console.log(secret)
 
 const authorizationCheck = async (req, res, next) => {
   let header = req.headers.authorization;
@@ -19,7 +20,6 @@ const authorizationCheck = async (req, res, next) => {
         res.sendStatus(401);
       } else {
         // console.log(tokenNew); // bar
-
         req.user = tokenNew;
         next();
       }

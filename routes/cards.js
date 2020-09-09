@@ -1,7 +1,8 @@
 const { Router } = require("express");
 const router = Router();
 const cardsDAO = require("../daos/cards");
-const secret = "shhhhhh do not tell anyone this secret";
+const { JWTSECRET } = process.env;
+const secret = JWTSECRET
 const jwt = require("jsonwebtoken");
 const setDAO = require("../daos/set");
 const historyDAO = require("../daos/history");

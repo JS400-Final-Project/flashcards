@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const historyDAO = require("../daos/history");
+require('dotenv').config()
 const { JWTSECRET } = process.env;
 const secret = JWTSECRET;
 const jwt = require("jsonwebtoken");

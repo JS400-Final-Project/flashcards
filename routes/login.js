@@ -5,7 +5,7 @@ const userDAO = require("../daos/user");
 const historyDAO = require("../daos/history");
 const jwt = require("jsonwebtoken");
 const { JWTSECRET } = process.env;
-const secret = JWTSECRET
+const secret = JWTSECRET;
 
 const authorizationCheck = async (req, res, next) => {
   let header = req.headers.authorization;

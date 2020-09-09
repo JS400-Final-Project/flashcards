@@ -9,6 +9,7 @@ const { JWTSECRET } = process.env;
 const secret = JWTSECRET;
 console.log(secret)
 
+
 const authorizationCheck = async (req, res, next) => {
   let header = req.headers.authorization;
   if (!header) {

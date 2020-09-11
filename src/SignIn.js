@@ -39,15 +39,7 @@ class SignIn extends React.Component {
       loginSuccess: false,
     };
   }
-  //   componentDidMount() {
 
-  // //  this.state = {value: this.props.value};
-  //  this.handleOnChangeEmail = this.handleOnChangeEmail.bind(this);
-  //  this.handleOnChangePassword  = this.handleOnChangePassword.bind(this);
-  //  this.handleOnBlur = this.handleOnBlur.bind(this);
-  //  this.onSubmit = this.onSubmit.bind(this);
-
-  //   }
   //called when user moves out of email input field
   handleOnChangeEmail = (e) => {
     this.setState({
@@ -86,21 +78,14 @@ class SignIn extends React.Component {
   // sending login information to express route after submit button is pressed
   onSubmit = async (e) => {
     e.preventDefault();
-
-    this.setState({ wrong_password: true });
     const data = {
       email: this.state.email,
       password: this.state.password,
     };
-    const loginResult = await LoginService(data);
-    console.log(`Test ${loginResult.status}`);
-    if (loginResult.status !== 200) {
-      console.log("Log in Failed.");
-      this.setState({
-        loginSuccess: false,
-        error: true,
-      });
-    } else {
+   
+    try{
+      const loginResult = await LoginService(data);
+      console.log(`Test ${loginResult.status}`);
       console.log("Log in Success.");
       console.log(JSON.stringify(loginResult.data));
       localStorage.setItem("userData", JSON.stringify(loginResult.data));
@@ -109,7 +94,17 @@ class SignIn extends React.Component {
         error: false,
       });
     }
-    this.forceUpdate();
+    catch (e)
+    {
+        console.log("Log in Failed.");
+        this.setState
+        ({
+        loginSuccess: false,
+        error: true,
+        });
+        } 
+        this.setState({ wrong_password: false });
+    }   
   };
 
   render() {

@@ -1,4 +1,4 @@
-##Team Members:  Tanveer Ali, Rolly Seth, and Ryan Fields
+## Team Members:  Tanveer Ali, Rolly Seth, and Ryan Fields
 
 # Final self-evaluation
 

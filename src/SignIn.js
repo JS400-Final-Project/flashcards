@@ -76,20 +76,24 @@ class SignIn extends React.Component {
   };
 
   // sending login information to express route after submit button is pressed
-  onSubmit = async (e) => {
+  onSubmit = async (e) => 
+  {
     e.preventDefault();
-    const data = {
-      email: this.state.email,
-      password: this.state.password,
-    };
+    const data = 
+          {
+             email: this.state.email,
+             password: this.state.password,
+          };
    
-    try{
+    try
+    {
       const loginResult = await LoginService(data);
       console.log(`Test ${loginResult.status}`);
       console.log("Log in Success.");
       console.log(JSON.stringify(loginResult.data));
       localStorage.setItem("userData", JSON.stringify(loginResult.data));
-      this.setState({
+      this.setState
+      ({
         loginSuccess: true,
         error: false,
       });
@@ -102,7 +106,6 @@ class SignIn extends React.Component {
         loginSuccess: false,
         error: true,
         });
-        } 
         this.setState({ wrong_password: false });
     }   
   };

@@ -97,6 +97,7 @@ class SignIn extends React.Component {
         loginSuccess: true,
         error: false,
       });
+      this.setState({ wrong_password: false });
     }
     catch (e)
     {
@@ -106,7 +107,7 @@ class SignIn extends React.Component {
         loginSuccess: false,
         error: true,
         });
-        this.setState({ wrong_password: false });
+        this.setState({ wrong_password: true });
     }   
   };
 

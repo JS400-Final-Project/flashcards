@@ -1,3 +1,5 @@
+##Team Members:  Tanveer Ali, Rolly Seth, and Ryan Fields
+
 # Final self-evaluation
 
 Deployed App- https://flashcards-js.herokuapp.com/flashcards/#/

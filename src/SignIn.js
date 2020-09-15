@@ -1,6 +1,4 @@
 import React from "react";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import firebase from "firebase";
 import { Col, Row, Container } from "react-bootstrap";
 import { faBrain } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
